@@ -19,5 +19,10 @@ func main() {
 	protected.PUT("/todos/:id", todo.UpdateTodo)
 	protected.DELETE("/todos/:id", todo.DeleteTodo)
 
+	protected.POST("/todos/:id/items", todo.CreateTodoItem)
+	protected.PUT("/items/:id", todo.UpdateTodoItem)
+	protected.DELETE("/items/:id", todo.DeleteTodoItem)
+	protected.GET("/todos/:id/items", todo.GetTodoItems)
+
 	r.Run(":5000")
 }
